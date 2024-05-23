@@ -41,12 +41,15 @@ def data_type(dataset_type):
     elif dataset_type == 'sat_instance':
         dataset_type = sat_instance
     return dataset_type
-    
-st.write(f'Knowledge Base: {data_type(dataset_type)}')
-st.write(f'Alpha: {alpha}')
+
+st.subheader('Input:')   
+st.write(f'**Knowledge Base:** {data_type(dataset_type)}')
+st.write(f'**Alpha:** {alpha}')
 
 def algo_type(algorithm_type):
     return algorithm_type
+
+st.subheader('Output:')   
 
 if algorithm_type == 'PL_Resolution':
     start_time = time.time()
@@ -57,11 +60,11 @@ if algorithm_type == 'PL_Resolution':
     execution_time = end_time - start_time
 
     if result:
-        st.write("Có phân giải hợp lý với KB và alpha.")
+        st.write("**Có phân giải hợp lý với KB và alpha.**")
     else:
-        st.write("Không có phân giải hợp lý với KB và alpha.")
+        st.write("**Không có phân giải hợp lý với KB và alpha.**")
 
-    st.write(f"Thời gian thực thi: {execution_time} giây.")
+    st.write(f"**Thời gian thực thi: {execution_time} giây.**")
 
 elif algorithm_type == 'dpll':
     start_time = time.time()
@@ -71,11 +74,11 @@ elif algorithm_type == 'dpll':
     execution_time = end_time - start_time
 
     if dpll_solution:
-        st.write("Tìm được lời giải thỏa mãn KB và alpha:")
+        st.write("**Tìm được lời giải thỏa mãn KB và alpha:**")
         st.table(dpll_solution)
     else:
-        st.write("Không tìm được lời giải thỏa mãn KB và alpha.")
-    st.write(f"Thời gian thực thi: {execution_time} giây.")
+        st.write("**Không tìm được lời giải thỏa mãn KB và alpha.**")
+    st.write(f"**Thời gian thực thi: {execution_time} giây.**")
 
 else:
     start_time = time.time()
@@ -86,10 +89,10 @@ else:
     execution_time = end_time - start_time
 
     if solution:
-        st.write("\nTìm được lời giải thỏa mãn KB và alpha:")
+        st.write("\n**Tìm được lời giải thỏa mãn KB và alpha:**")
         solution_str = ['Yes' if value == 1 else 'No' for value in solution]
         st.write(solution_str)
     else:
-        st.write("\nKhông tìm được lời giải thỏa mãn KB và alpha.")
+        st.write("\n**Không tìm được lời giải thỏa mãn KB và alpha.**")
         
-    st.write(f"Thời gian thực thi: {execution_time} giây.")
+    st.write(f"**Thời gian thực thi: {execution_time} giây.**")
