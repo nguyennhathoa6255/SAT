@@ -3,10 +3,10 @@
 
 ![Home](src\home.png)
 
-**Bài tập trong phạm vi tìm hiểu Independent Set, K-Clique, và Vertex Cover, từ đó:**
-- Chứng minh mỗi bài toán thuộc NP.
-- Giảm từ SAT (một bài toán NP-Complete đã biết) về các bài toán này.
-- Chuyển đổi giữa các bài toán với nhau để chứng minh tính NP-Completeness của chúng.
+**Làm cách nào chúng tôi có thể triển khai PL-Resolution, DPLL và WalkSAT một cách hiệu quả bằng một ngôn ngữ lập trình cụ thể?**
+- Hiểu các khái niệm cốt lõi của từng thuật toán.
+- Lựa chọn ngôn ngữ lập trình phù hợp để thực hiện.
+- Đánh giá các chỉ số hiệu suất để so sánh.
 
 ### 1. Lý thuyết:
 **Thuật toán PL-Resolution**:
