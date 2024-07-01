@@ -1,7 +1,11 @@
 import time
 import streamlit as st
-import build as bd
-
+# import build as bd
+import os
+import sys
+current_dir = os.path.dirname(os.path.abspath(__file__))
+sys.path.append(os.path.join(current_dir, 'src'))
+from src import build as bd
 
 # Thiết lập page
 st.set_page_config(     
@@ -19,10 +23,6 @@ with st.sidebar:
     backbone_size = st.number_input('Kích thước backbone:', value=10)
 # Tạo input cho Uniform Random-3-SAT
 ur_3sat_instance = bd.Dataset.generate_uniform_random_3sat(num_vars, num_clauses)
-
-# Số lượng biến và mệnh đề cho Random-3-SAT
-# backbone_size = 10  # Kích thước backbone
-
 sat_instance = bd.Dataset.generate_random_3sat_instance(num_vars, num_clauses, backbone_size)
 
 # Sử dụng hàm generate_alpha để tạo alpha
